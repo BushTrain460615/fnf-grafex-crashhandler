@@ -11,7 +11,7 @@ on:
 
 jobs:
   build:
-    runs-on: windows-latest
+    runs-on: macOS-latest
     
     steps:
     - uses: actions/checkout@v3
@@ -25,7 +25,7 @@ jobs:
         pip install -r requirements.txt;
     - name: Build using pyinstaller
       run: | 
-        pyinstaller --noconsole --name="GrafexCrashHandler.exe" --icon="./resources/icon.ico" --onefile --noupx main.py
+        pyinstaller --noconsole --name="GrafexCrashHandler.app" --icon="./resources/icon.ico" --onefile --noupx main.py
     - name: Publish artifacts
       uses: actions/upload-artifact@v3
       with:
